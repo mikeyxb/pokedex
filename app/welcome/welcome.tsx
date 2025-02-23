@@ -1,3 +1,4 @@
+import PokemonList from "~/Components/PokemonList";
 import logoDark from "./logo-dark.svg";
 import logoLight from "./logo-light.svg";
 
@@ -43,6 +44,7 @@ export function Welcome({ message }: { message: string }) {
           </nav>
         </div>
       </div>
+      <PokemonList />
     </main>
   );
 }
