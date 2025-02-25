@@ -82,7 +82,7 @@ export default function PokemonDetail({ id }: { id: number }) {
 						style={{ backgroundImage: typeBgImage() }}
 					>
 						<div className="flex justify-between w-full items-center px-2">
-							<div className="flex w-full font-odibee text-2xl">
+							<div className="flex w-full font-odibee text-2xl capitalize">
 								<h1>{pokemon.name}</h1>
 							</div>
 							<div className="flex w-full justify-end items-baseline">
