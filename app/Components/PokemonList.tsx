@@ -4,6 +4,7 @@ import { useFetcher } from "react-router";
 import type { PokemonData } from "~/routes/pokemon";
 import { pokemonTypeColors } from "~/helpers/pokemonTypeColors";
 import { ThreeDot } from "react-loading-indicators";
+import PokemonDetail from "./PokemonDetail";
 
 // interface Pokemon {
 // 	name: string;
@@ -57,7 +58,7 @@ export default function PokemonList() {
 			<h1 className="text-3xl font-bold mb-6">Pokémon List</h1>
 
 			{/* Pokémon Grid */}
-			<div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+			<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
 				{pokemon.map((pokemon, index) => {
 					return (
 						<motion.div
@@ -65,32 +66,8 @@ export default function PokemonList() {
 							initial={{ opacity: 0, y: 20 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 1 }}
-							className="bg-gray-200 rounded-lg shadow-lg p-4 flex flex-col items-center dark:bg-gray-700 border border-gray-300 dark:border-gray-600"
 						>
-							<img
-								src={pokemon.image}
-								alt={pokemon.name}
-								className="w-20 h-20 mb-2"
-								loading="lazy"
-							/>
-							<p className="text-lg capitalize">{pokemon.name}</p>
-							<p className="text-sm text-gray-500">Types</p>
-							<div>
-								{pokemon.type.map((type, index) => {
-									const color = pokemonTypeColors.find(
-										(typeColor) => typeColor.type === type,
-									)?.color;
-									return (
-										<span
-											key={index}
-											className="text-xs text-white text-center m-auto bg-gray-300 dark:bg-gray-600 rounded-lg px-3 py-1 shadow-black/30 shadow-xs mr-1 capitalize"
-											style={{ backgroundColor: color }}
-										>
-											{type}
-										</span>
-									);
-								})}
-							</div>
+							<PokemonDetail id={pokemon.id} />
 						</motion.div>
 					);
 				})}
@@ -102,7 +79,7 @@ export default function PokemonList() {
 				<div
                 className="flex items-center justify-center mb-10"
                 >
-                    <ThreeDot color="#32cd32" size="medium" text="" textColor="" />
+                    <ThreeDot color="#32cd32" size="large" text="Loading More Pokemon....." textColor="#32cd32" />
                 </div>
 			) : null}
 		</div>

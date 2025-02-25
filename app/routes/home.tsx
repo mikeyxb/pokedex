@@ -1,6 +1,6 @@
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
 import PokemonList from "~/Components/PokemonList";
+import Header from "~/Components/Header";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -16,6 +16,7 @@ export function loader({ context }: Route.LoaderArgs) {
 export default function Home({ loaderData }: Route.ComponentProps) {
   return (
     <>
+    <Header />
       {/* <Welcome message={loaderData.message} /> */}
       <PokemonList />
     </>
