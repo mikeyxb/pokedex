@@ -141,9 +141,6 @@
   font-style: normal;
 }
 
-
-
-
 html,
 body {
   @apply bg-white dark:bg-gray-950;

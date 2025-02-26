@@ -1,40 +1,60 @@
 {
-  "name": "pokedex",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "build": "react-router build",
-    "dev": "react-router dev",
-    "start": "react-router-serve ./build/server/index.js",
-    "typecheck": "react-router typegen && tsc"
-  },
-  "dependencies": {
-    "@react-router/node": "^7.1.5",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "framer-motion": "^12.4.7",
-    "isbot": "^5.1.17",
-    "lucide-react": "^0.476.0",
-    "pokenode-ts": "^1.20.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-loading-indicators": "^1.0.0",
-    "react-router": "^7.1.5",
-    "tailwind-merge": "^3.0.2",
-    "tailwindcss-animate": "^1.0.7"
-  },
-  "devDependencies": {
-    "@react-router/dev": "^7.1.5",
-    "@tailwindcss/vite": "^4.0.0",
-    "@types/node": "^20",
-    "@types/react": "^19.0.1",
-    "@types/react-dom": "^19.0.1",
-    "@vercel/node": "^5.1.2",
-    "@vercel/react-router": "^1.0.2",
-    "autoprefixer": "^10.4.20",
-    "tailwindcss": "^4.0.9",
-    "typescript": "^5.7.2",
-    "vite": "^5.4.11",
-    "vite-tsconfig-paths": "^5.1.4"
-  }
+	"name": "pokedex",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"icons": "npx @svgr/cli --out-dir app/components/icons -- app/icons",
+		"icons:watch": "npm-watch icons",
+		"dev:svg": "run-s icons icons:watch",
+		"build": "react-router build",
+		"dev:react-router": "react-router dev",
+		"dev": "run-p dev:*",
+		"start": "react-router-serve ./build/server/index.js",
+		"typecheck": "react-router typegen && tsc"
+	},
+	"watch": {
+		"icons": {
+			"patterns": [
+				"icons"
+			],
+			"extensions": "svg",
+			"quiet": false
+		}
+	},
+	"dependencies": {
+		"@radix-ui/react-select": "^2.1.6",
+		"@react-router/node": "^7.1.5",
+		"class-variance-authority": "^0.7.1",
+		"clsx": "^2.1.1",
+		"framer-motion": "^12.4.7",
+		"isbot": "^5.1.17",
+		"lucide-react": "^0.476.0",
+		"pokenode-ts": "^1.20.0",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0",
+		"react-loading-indicators": "^1.0.0",
+		"react-router": "^7.1.5",
+		"tailwind-merge": "^3.0.2",
+		"tailwindcss-animate": "^1.0.7"
+	},
+	"devDependencies": {
+		"@react-router/dev": "^7.1.5",
+		"@svgr/cli": "^8.1.0",
+		"@svgr/plugin-jsx": "^8.1.0",
+		"@svgr/plugin-prettier": "^8.1.0",
+		"@svgr/plugin-svgo": "^8.1.0",
+		"@tailwindcss/vite": "^4.0.0",
+		"@types/node": "^20",
+		"@types/react": "^19.0.1",
+		"@types/react-dom": "^19.0.1",
+		"@vercel/node": "^5.1.2",
+		"@vercel/react-router": "^1.0.2",
+		"autoprefixer": "^10.4.20",
+		"npm-run-all": "^4.1.5",
+		"npm-watch": "^0.13.0",
+		"tailwindcss": "^4.0.9",
+		"typescript": "^5.7.2",
+		"vite": "^5.4.11",
+		"vite-tsconfig-paths": "^5.1.4"
+	}
 }

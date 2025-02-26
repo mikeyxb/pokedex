@@ -15,10 +15,11 @@ export function loader({ context }: Route.LoaderArgs) {
 
 export default function Home({ loaderData }: Route.ComponentProps) {
   return (
-    <>
-    <Header />
+    <div
+    className="w-full"
+    >
       {/* <Welcome message={loaderData.message} /> */}
       <PokemonList />
-    </>
+    </div>
   );
 }

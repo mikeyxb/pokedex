@@ -25,7 +25,6 @@ export default function MyPokemon() {
 		<div
 		className="container mx-auto p-4 flex flex-col items-center"
 		>
-			<Header />
 			a list of my pokemon
 			<div
 			className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-5">
